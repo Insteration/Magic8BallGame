@@ -42,7 +42,7 @@ class BallViewController: UIViewController {
         if motion == .motionShake {
             
             if Reachability.isConnectedToNetwork() {
-                RequestAnswers().getRequest { [weak self] magicBall in
+                RequestAnswersAPI().getRequest { [weak self] magicBall in
                     self?.ballView.myLabel.text = magicBall.magic.answer
                 }
                 ballView.shake()

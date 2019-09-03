@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RequestAnswers {
+struct RequestAnswersAPI {
     
     let api = "https://8ball.delegator.com/magic/JSON/"
     let endpoint = "request"
