@@ -17,5 +17,5 @@ struct Options {
     "Wait",
     "Let's do it!"
     ]
-    static var user = -1
+    static var userStatus = -1
 }

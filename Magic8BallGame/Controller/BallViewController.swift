@@ -11,7 +11,7 @@ import CoreMotion
 
 class BallViewController: UIViewController {
     
-    private var animator: UIDynamicAnimator!
+    lazy var animator = UIDynamicAnimator()
     private var timer = Timer()
     private var gyroTimer = Timer()
     private var motion = CMMotionManager()
@@ -42,16 +42,16 @@ class BallViewController: UIViewController {
         if motion == .motionShake {
             
             if Reachability.isConnectedToNetwork() {
-                BallEngine().getRequest { [weak self] magicBall in
+                RequestAnswers().getRequest { [weak self] magicBall in
                     self?.ballView.myLabel.text = magicBall.magic.answer
                 }
                 ballView.shake()
             } else {
-                if  Options.user == -1 {
+                if  Options.userStatus == -1 {
                 self.ballView.myLabel.text = options.answers.randomElement()
                 ballView.shake()
                 } else {
-                    self.ballView.myLabel.text = options.answers[Options.user]
+                    self.ballView.myLabel.text = options.answers[Options.userStatus]
                     ballView.shake()
                 }
             }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BallEngine {
+struct RequestAnswers {
     
     let api = "https://8ball.delegator.com/magic/JSON/"
     let endpoint = "request"
@@ -23,18 +23,8 @@ struct BallEngine {
                 print(error.localizedDescription)
             }
             
-            guard let httpsResponse = response as? HTTPURLResponse else {
-                print("Response cast failed")
-                return
-            }
-            
-            guard httpsResponse.statusCode == 200 else {
-                print("Unexpected status code")
-                return
-            }
-            
-            guard let data = data else {
-                print("Nod data presetn")
+            guard let httpsResponse = response as? HTTPURLResponse, httpsResponse.statusCode == 200, let data = data  else {
+                print("Response failed")
                 return
             }
             
