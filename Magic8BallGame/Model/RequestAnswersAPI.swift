@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct RequestAnswersAPI {
     
@@ -14,32 +15,31 @@ struct RequestAnswersAPI {
     let endpoint = "request"
     let session = URLSession(configuration: .default)
     
-    func getRequest(complitionHandler: @escaping ((MagicBall) -> Void)) {
-        guard let url = URL(string: api + endpoint) else { return }
-        print(url)
-        session.dataTask(with: url) { data, response, error in
-            
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            
-            guard let httpsResponse = response as? HTTPURLResponse, httpsResponse.statusCode == 200, let data = data  else {
-                print("Response failed")
-                return
-            }
-            
-            do {
-                let parsedData = try JSONDecoder().decode(MagicBall.self, from: data)
-                DispatchQueue.main.async {
-                    complitionHandler(parsedData)
-                    print(parsedData)
+    func getApi(complitionHandler: @escaping ((MagicBall) -> Void)) {
+        AF.request(api + endpoint, method: .get, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                
+                switch response.result {
+                    
+                case .success(let json):
+                    print(json)
+                    DispatchQueue.main.async {
+                        
+                        do {
+                            let parsedData = try JSONDecoder().decode(MagicBall.self, from: response.data!)
+                            DispatchQueue.main.async {
+                                complitionHandler(parsedData)
+                                print(parsedData)
+                            }
+                        } catch {
+                            print("Decoding failed")
+                        }
+                        
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            } catch {
-                print("Decoding failed")
-            }
-            
-            }
-            .resume()
+        }
     }
     
 }

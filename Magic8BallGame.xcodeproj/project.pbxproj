@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,10 +20,15 @@
 		4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F023069FB3003E3286 /* BallTriangleView.swift */; };
 		4AB316F32306A01F003E3286 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F22306A01F003E3286 /* Extensions.swift */; };
 		4AB316F52306A10F003E3286 /* BallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F42306A10F003E3286 /* BallModel.swift */; };
+		74E62EB19D11549180CF2F91 /* Pods_Magic8BallGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.release.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.release.xcconfig"; sourceTree = "<group>"; };
+		08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic8BallGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A155A2F231E79C400653C70 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4A46784D233215E1001E9955 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A46785223321626001E9955 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4F8EAC231E699D00F1051F /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4A4F8EAF231E6A3C00F1051F /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		4A99E29823057B5D0070BA91 /* Magic8BallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic8BallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +43,7 @@
 		4AB316F023069FB3003E3286 /* BallTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallTriangleView.swift; sourceTree = "<group>"; };
 		4AB316F22306A01F003E3286 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4AB316F42306A10F003E3286 /* BallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallModel.swift; sourceTree = "<group>"; };
+		7CBFEF5367AF08241B287568 /* Pods-Magic8BallGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.debug.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E62EB19D11549180CF2F91 /* Pods_Magic8BallGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,11 +67,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4A46784C233215E1001E9955 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A46785223321626001E9955 /* Alamofire.framework */,
+				4A46784D233215E1001E9955 /* Alamofire.framework */,
+				08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A99E28F23057B5D0070BA91 = {
 			isa = PBXGroup;
 			children = (
 				4A99E29A23057B5D0070BA91 /* Magic8BallGame */,
 				4A99E29923057B5D0070BA91 /* Products */,
+				4A46784C233215E1001E9955 /* Frameworks */,
+				C5E8ABA19C6B1804B6377C3B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +139,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		C5E8ABA19C6B1804B6377C3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CBFEF5367AF08241B287568 /* Pods-Magic8BallGame.debug.xcconfig */,
+				0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A99E2AA23057B5E0070BA91 /* Build configuration list for PBXNativeTarget "Magic8BallGame" */;
 			buildPhases = (
+				B24B90467203C030F7BE295B /* [CP] Check Pods Manifest.lock */,
 				4A99E29423057B5D0070BA91 /* Sources */,
 				4A99E29523057B5D0070BA91 /* Frameworks */,
 				4A99E29623057B5D0070BA91 /* Resources */,
+				70F85B54CAA1C2049943AF54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +215,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70F85B54CAA1C2049943AF54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B24B90467203C030F7BE295B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Magic8BallGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A99E29423057B5D0070BA91 /* Sources */ = {
@@ -344,6 +416,7 @@
 		};
 		4A99E2AB23057B5E0070BA91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CBFEF5367AF08241B287568 /* Pods-Magic8BallGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +435,7 @@
 		};
 		4A99E2AC23057B5E0070BA91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

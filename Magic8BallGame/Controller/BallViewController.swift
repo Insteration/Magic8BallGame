@@ -19,6 +19,7 @@ class BallViewController: UIViewController {
     private let ballView = BallView()
     private let options = Options()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,8 +29,9 @@ class BallViewController: UIViewController {
         getConstrainsForBallView()
         getDynamicWithCollisionForView()
         createGyroDirection()
+        createCustomNavigationController()
+        startTimer()
         
-        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(clear), userInfo: nil, repeats: true)
     }
     
     override var canBecomeFirstResponder: Bool {
@@ -42,24 +44,26 @@ class BallViewController: UIViewController {
         if motion == .motionShake {
             
             if Reachability.isConnectedToNetwork() {
-                RequestAnswersAPI().getRequest { [weak self] magicBall in
+                RequestAnswersAPI().getApi { [weak self] magicBall in
                     self?.ballView.myLabel.text = magicBall.magic.answer
                 }
                 ballView.shake()
             } else {
                 if  Options.userStatus == -1 {
-                self.ballView.myLabel.text = options.answers.randomElement()
-                ballView.shake()
+                    self.ballView.myLabel.text = options.answers.randomElement()
+                    ballView.shake()
                 } else {
                     self.ballView.myLabel.text = options.answers[Options.userStatus]
                     ballView.shake()
                 }
             }
+            resetTimer()
         }
     }
     
+    
     @objc func clear() {
-        self.ballView.myLabel.text = "Shake for answer"
+            self.ballView.myLabel.text = "Shake for answer"
     }
     
     @objc func giro() {
@@ -83,6 +87,15 @@ class BallViewController: UIViewController {
         }
     }
     
+    private func resetTimer() {
+        timer.invalidate()
+        startTimer()
+    }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(clear), userInfo: nil, repeats: true)
+    }
+    
     private func createGyroDirection() {
         gyroTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(giro), userInfo: nil, repeats: true)
     }
@@ -90,7 +103,13 @@ class BallViewController: UIViewController {
     private func getConstrainsForBallView() {
         ballView.translatesAutoresizingMaskIntoConstraints = false
         ballView.center = view.center
-        ballView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+//        ballView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+//        ballView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        ballView.bottomAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        ballView.widthAnchor.constraint(equalToConstant: 128).isActive = true
+//        ballView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     private func getDynamicWithCollisionForView() {
@@ -98,5 +117,20 @@ class BallViewController: UIViewController {
         let collisionBehavior = UICollisionBehavior(items: [ballView])
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collisionBehavior)
+    }
+    
+    private func createCustomNavigationController() {
+        let nav = self.navigationController?.navigationBar
+        
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.white
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        
+        let image = UIImage(named: "8")
+        imageView.image = image
+        
+        navigationItem.titleView = imageView
     }
 }
