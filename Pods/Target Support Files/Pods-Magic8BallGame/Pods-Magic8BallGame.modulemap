@@ -1,6 +1,0 @@
-framework module Pods_Magic8BallGame {
-  umbrella header "Pods-Magic8BallGame-umbrella.h"
-
-  export *
-  module * { export * }
-}
