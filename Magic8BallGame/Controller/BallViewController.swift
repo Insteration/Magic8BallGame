@@ -19,7 +19,6 @@ class BallViewController: UIViewController {
     private let ballView = BallView()
     private let options = Options()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,27 +60,25 @@ class BallViewController: UIViewController {
         }
     }
     
-    
     @objc func clear() {
             self.ballView.myLabel.text = "Shake for answer"
     }
     
     @objc func giro() {
         
-        let x = 0
+        let defaultX = 0
         var myX = 0.0
         
         if motion.isAccelerometerAvailable {
             motion.accelerometerUpdateInterval = 0.01
-            motion.startAccelerometerUpdates(to: .main) {
-                (data, error) in
+            motion.startAccelerometerUpdates(to: .main) { (data, error) in
                 guard let data = data, error == nil else { return }
                 print(data.acceleration.x, data.acceleration.y)
                 myX = data.acceleration.x
             }
         }
         
-        if myX > 0.5 && x == 0 {
+        if myX > 0.5 && defaultX == 0 {
             gravity.angle = 0
             myX = 1
         }

@@ -40,7 +40,6 @@ extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = optionsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = options.answers[indexPath.row]
         
-        
         return cell
     }
     

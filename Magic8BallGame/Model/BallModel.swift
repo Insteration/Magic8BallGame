@@ -6,7 +6,6 @@
 //  Copyright © 2019 Johansson Group. All rights reserved.
 //
 
-
 // MARK: - MagicBall
 struct MagicBall: Codable {
     let magic: Magic

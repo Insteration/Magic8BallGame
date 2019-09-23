@@ -1,17 +1,11 @@
 //
 //  BallView.swift
 //  Magic8BallGame
-//
-//  Created by Artem Karma on 8/15/19.
-//  Copyright © 2019 Johansson Group. All rights reserved.
-//
 
 import UIKit
 
-
-
 class BallView: UIView {
-    
+        
     var myLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 25, y: 65, width: 100, height: 30)
@@ -63,7 +57,6 @@ class BallView: UIView {
         self.addSubview(backgroundView)
         backgroundView.center = self.center
 
-        
         let triangle = BallTriangleView(frame: CGRect(x: 0, y: 0, width: 150, height: 120))
         triangle.backgroundColor = .clear
 
@@ -71,10 +64,8 @@ class BallView: UIView {
         triangle.addSubview(myLabel)
     }
    
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
 }
-

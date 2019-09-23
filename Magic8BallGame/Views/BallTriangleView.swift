@@ -27,7 +27,7 @@ class BallTriangleView: UIView {
             context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
             context.addLine(to: CGPoint(x: (rect.maxX / 2.0), y: rect.minY))
             context.closePath()
-            context.setFillColor(red:0.00, green:0.00, blue:0.55, alpha:1.0)
+            context.setFillColor(red: 0.00, green: 0.00, blue: 0.55, alpha: 1.0)
             context.fillPath()
         }
 }
