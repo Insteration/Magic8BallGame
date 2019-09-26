@@ -10,21 +10,21 @@ import Foundation
 import Alamofire
 
 struct RequestAnswersAPI {
-    
+
     let api = "https://8ball.delegator.com/magic/JSON/"
     let endpoint = "request"
     let session = URLSession(configuration: .default)
-    
-    func getApi(complitionHandler: @escaping ((MagicBall) -> Void)) {
+
+    func getAnswerRequestFromApi(complitionHandler: @escaping ((MagicBall) -> Void)) {
         AF.request(api + endpoint, method: .get, encoding: JSONEncoding.default)
             .responseJSON { response in
-                
+
                 switch response.result {
-                    
+
                 case .success(let json):
                     print(json)
                     DispatchQueue.main.async {
-                        
+
                         do {
                             let parsedData = try JSONDecoder().decode(MagicBall.self, from: response.data!)
                             DispatchQueue.main.async {
@@ -34,12 +34,12 @@ struct RequestAnswersAPI {
                         } catch {
                             print("Decoding failed")
                         }
-                        
+
                     }
                 case .failure(let error):
                     print(error)
                 }
         }
     }
-    
+
 }

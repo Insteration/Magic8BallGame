@@ -7,14 +7,14 @@
 //
 
 struct Options {
-    
+
     let answers = [
-    "Just do it!",
-    "Change your mind",
-    "Keep on!",
-    "Not now",
-    "Wait",
-    "Let's do it!"
+        L10n.justDoIt,
+        L10n.changeYourMind,
+        L10n.keepOn,
+        L10n.notNow,
+        L10n.wait,
+        L10n.letSDoIt
     ]
     static var userStatus = -1
 }

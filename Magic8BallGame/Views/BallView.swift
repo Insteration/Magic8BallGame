@@ -5,14 +5,14 @@
 import UIKit
 
 class BallView: UIView {
-        
+
     var myLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 25, y: 65, width: 100, height: 30)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = "Shake for answer"
+        label.text = L10n.shakeForAnswer
         label.font = label.font.withSize(9.0)
         label.textColor = UIColor.white
         label.layer.cornerRadius = 3.0
@@ -20,7 +20,7 @@ class BallView: UIView {
         label.backgroundColor = .clear
         return label
     }()
-    
+
     var backgroundView: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
@@ -35,7 +35,7 @@ class BallView: UIView {
         view.layer.shadowRadius = 2.0
         return view
     }()
-    
+
     fileprivate func setupBallView() {
         self.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         self.layer.borderWidth = 3.0
@@ -48,12 +48,12 @@ class BallView: UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = .black
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupBallView()
-        
+
         self.addSubview(backgroundView)
         backgroundView.center = self.center
 
@@ -63,9 +63,9 @@ class BallView: UIView {
         self.backgroundView.addSubview(triangle)
         triangle.addSubview(myLabel)
     }
-   
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }

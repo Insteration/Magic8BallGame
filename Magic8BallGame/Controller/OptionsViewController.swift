@@ -11,13 +11,13 @@ import UIKit
 class OptionsViewController: UIViewController {
 
     @IBOutlet weak var optionsTableView: UITableView!
-    
+
     private var options = Options()
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,22 +27,22 @@ class OptionsViewController: UIViewController {
 }
 
 extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Choose answer"
+        return L10n.chooseAnswer
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.answers.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = optionsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = options.answers[indexPath.row]
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         Options.userStatus = indexPath.row
@@ -51,5 +51,5 @@ extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
-    
+
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4A155A30231E79C400653C70 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A155A2F231E79C400653C70 /* Reachability.swift */; };
+		4A28058A233CCF2400B4BA14 /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A280589233CCF2400B4BA14 /* Colors.json */; };
+		4A28058C233CCF3F00B4BA14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A28058B233CCF3F00B4BA14 /* Localizable.strings */; };
+		4A28058E233CCF7100B4BA14 /* GenerateResource.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4A28058D233CCF7100B4BA14 /* GenerateResource.sh */; };
+		4A28059A233CD5A600B4BA14 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A280597233CD5A600B4BA14 /* Assets.swift */; };
+		4A28059D233CD7D100B4BA14 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A28059C233CD7D100B4BA14 /* L10n.swift */; };
 		4A4F8EAD231E699D00F1051F /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F8EAC231E699D00F1051F /* OptionsViewController.swift */; };
 		4A4F8EB0231E6A3C00F1051F /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F8EAF231E6A3C00F1051F /* Options.swift */; };
 		4A99E29C23057B5D0070BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E29B23057B5D0070BA91 /* AppDelegate.swift */; };
@@ -20,6 +25,7 @@
 		4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F023069FB3003E3286 /* BallTriangleView.swift */; };
 		4AB316F32306A01F003E3286 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F22306A01F003E3286 /* Extensions.swift */; };
 		4AB316F52306A10F003E3286 /* BallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F42306A10F003E3286 /* BallModel.swift */; };
+		4ADB0BA7233CDAD40052D364 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB0BA6233CDAD40052D364 /* Colors.swift */; };
 		74E62EB19D11549180CF2F91 /* Pods_Magic8BallGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +33,11 @@
 		0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.release.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.release.xcconfig"; sourceTree = "<group>"; };
 		08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic8BallGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A155A2F231E79C400653C70 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4A280589233CCF2400B4BA14 /* Colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
+		4A28058B233CCF3F00B4BA14 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4A28058D233CCF7100B4BA14 /* GenerateResource.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GenerateResource.sh; sourceTree = "<group>"; };
+		4A280597233CD5A600B4BA14 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		4A28059C233CD7D100B4BA14 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		4A46784D233215E1001E9955 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A46785223321626001E9955 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4F8EAC231E699D00F1051F /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +54,7 @@
 		4AB316F023069FB3003E3286 /* BallTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallTriangleView.swift; sourceTree = "<group>"; };
 		4AB316F22306A01F003E3286 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4AB316F42306A10F003E3286 /* BallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallModel.swift; sourceTree = "<group>"; };
+		4ADB0BA6233CDAD40052D364 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7CBFEF5367AF08241B287568 /* Pods-Magic8BallGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.debug.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,8 +73,14 @@
 		4A2128702305E31300EA83A6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A28059C233CD7D100B4BA14 /* L10n.swift */,
+				4A280597233CD5A600B4BA14 /* Assets.swift */,
+				4ADB0BA6233CDAD40052D364 /* Colors.swift */,
 				4A99E2A223057B5E0070BA91 /* Assets.xcassets */,
 				4A99E2A723057B5E0070BA91 /* Info.plist */,
+				4A280589233CCF2400B4BA14 /* Colors.json */,
+				4A28058B233CCF3F00B4BA14 /* Localizable.strings */,
+				4A28058D233CCF7100B4BA14 /* GenerateResource.sh */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -99,12 +117,12 @@
 			isa = PBXGroup;
 			children = (
 				4A99E29B23057B5D0070BA91 /* AppDelegate.swift */,
+				4A99E29F23057B5D0070BA91 /* Main.storyboard */,
+				4A99E2A423057B5E0070BA91 /* LaunchScreen.storyboard */,
 				4AB316EF23069F03003E3286 /* Controller */,
 				4AB316ED23069EBC003E3286 /* Views */,
 				4AB316EE23069EC8003E3286 /* Model */,
-				4A99E29F23057B5D0070BA91 /* Main.storyboard */,
 				4A2128702305E31300EA83A6 /* Resources */,
-				4A99E2A423057B5E0070BA91 /* LaunchScreen.storyboard */,
 			);
 			path = Magic8BallGame;
 			sourceTree = "<group>";
@@ -160,7 +178,8 @@
 				4A99E29523057B5D0070BA91 /* Frameworks */,
 				4A99E29623057B5D0070BA91 /* Resources */,
 				70F85B54CAA1C2049943AF54 /* [CP] Embed Pods Frameworks */,
-				4A6869C62338BA6700BB4026 /* ShellScript */,
+				4A6869C62338BA6700BB4026 /* Swiftlint */,
+				4A28058F233CCFE600B4BA14 /* Swiftgen */,
 			);
 			buildRules = (
 			);
@@ -209,7 +228,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A28058C233CCF3F00B4BA14 /* Localizable.strings in Resources */,
+				4A28058E233CCF7100B4BA14 /* GenerateResource.sh in Resources */,
 				4A99E2A623057B5E0070BA91 /* LaunchScreen.storyboard in Resources */,
+				4A28058A233CCF2400B4BA14 /* Colors.json in Resources */,
 				4A99E2A323057B5E0070BA91 /* Assets.xcassets in Resources */,
 				4A99E2A123057B5D0070BA91 /* Main.storyboard in Resources */,
 			);
@@ -218,7 +240,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A6869C62338BA6700BB4026 /* ShellScript */ = {
+		4A28058F233CCFE600B4BA14 /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Magic8BallGame/Resources/Colors.json",
+				"$(SRCROOT)/Magic8BallGame/Resources/Localizable.strings",
+				"$(SRCROOT)/Magic8BallGame/Resources/Assets.xcassets",
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Magic8BallGame/Resources/Colors.swift",
+				"$(DERIVED_FILE_DIR)/Magic8BallGame/Resources/Assets.swift",
+				"$(DERIVED_FILE_DIR)/Magic8BallGame/Resources/Strings.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SRCROOT/Magic8BallGame/Resources/GenerateResource.sh\"\n";
+		};
+		4A6869C62338BA6700BB4026 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,6 +273,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -283,12 +330,15 @@
 			files = (
 				4A99E29E23057B5D0070BA91 /* BallViewController.swift in Sources */,
 				4A4F8EAD231E699D00F1051F /* OptionsViewController.swift in Sources */,
+				4A28059A233CD5A600B4BA14 /* Assets.swift in Sources */,
 				4AB316F32306A01F003E3286 /* Extensions.swift in Sources */,
 				4A4F8EB0231E6A3C00F1051F /* Options.swift in Sources */,
 				4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */,
 				4A99E2AE23057B6F0070BA91 /* RequestAnswersAPI.swift in Sources */,
 				4A99E29C23057B5D0070BA91 /* AppDelegate.swift in Sources */,
+				4ADB0BA7233CDAD40052D364 /* Colors.swift in Sources */,
 				4A99E2B023058AC40070BA91 /* BallView.swift in Sources */,
+				4A28059D233CD7D100B4BA14 /* L10n.swift in Sources */,
 				4A155A30231E79C400653C70 /* Reachability.swift in Sources */,
 				4AB316F52306A10F003E3286 /* BallModel.swift in Sources */,
 			);

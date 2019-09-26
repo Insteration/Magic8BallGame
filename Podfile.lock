@@ -1,29 +1,24 @@
 PODS:
   - Alamofire (5.0.0-rc.2)
-  - FBSDKCoreKit (5.6.0):
-    - FBSDKCoreKit/Basics (= 5.6.0)
-    - FBSDKCoreKit/Core (= 5.6.0)
-  - FBSDKCoreKit/Basics (5.6.0)
-  - FBSDKCoreKit/Core (5.6.0):
-    - FBSDKCoreKit/Basics
+  - SwiftGen (6.1.0)
   - SwiftLint (0.35.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.2)
-  - FBSDKCoreKit
+  - Alamofire (= 5.0.0-rc.2)
+  - SwiftGen
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - FBSDKCoreKit
+    - SwiftGen
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
-  FBSDKCoreKit: d6655a343868d4bb5c29a60859bab07c3be14a0b
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: d7fcec2e0825542e4126f0637eca57eae1666c25
+PODFILE CHECKSUM: bf51b81ab96c36a19adf123b15662b5ede2df544
 
 COCOAPODS: 1.7.2
