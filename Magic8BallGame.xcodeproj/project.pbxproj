@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A155A30231E79C400653C70 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A155A2F231E79C400653C70 /* Reachability.swift */; };
+		4A155A30231E79C400653C70 /* APIReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A155A2F231E79C400653C70 /* APIReachability.swift */; };
 		4A28058A233CCF2400B4BA14 /* Colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A280589233CCF2400B4BA14 /* Colors.json */; };
 		4A28058C233CCF3F00B4BA14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A28058B233CCF3F00B4BA14 /* Localizable.strings */; };
 		4A28058E233CCF7100B4BA14 /* GenerateResource.sh in Resources */ = {isa = PBXBuildFile; fileRef = 4A28058D233CCF7100B4BA14 /* GenerateResource.sh */; };
@@ -20,11 +20,11 @@
 		4A99E2A123057B5D0070BA91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A99E29F23057B5D0070BA91 /* Main.storyboard */; };
 		4A99E2A323057B5E0070BA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A99E2A223057B5E0070BA91 /* Assets.xcassets */; };
 		4A99E2A623057B5E0070BA91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A99E2A423057B5E0070BA91 /* LaunchScreen.storyboard */; };
-		4A99E2AE23057B6F0070BA91 /* RequestAnswersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AD23057B6F0070BA91 /* RequestAnswersAPI.swift */; };
+		4A99E2AE23057B6F0070BA91 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AD23057B6F0070BA91 /* APIModel.swift */; };
 		4A99E2B023058AC40070BA91 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AF23058AC40070BA91 /* BallView.swift */; };
 		4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F023069FB3003E3286 /* BallTriangleView.swift */; };
 		4AB316F32306A01F003E3286 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F22306A01F003E3286 /* Extensions.swift */; };
-		4AB316F52306A10F003E3286 /* BallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F42306A10F003E3286 /* BallModel.swift */; };
+		4AB316F52306A10F003E3286 /* APIStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F42306A10F003E3286 /* APIStruct.swift */; };
 		4ABF38522343453400E2EA6A /* BallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF38512343453400E2EA6A /* BallViewModel.swift */; };
 		4ADB0BA7233CDAD40052D364 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB0BA6233CDAD40052D364 /* Colors.swift */; };
 		74E62EB19D11549180CF2F91 /* Pods_Magic8BallGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */; };
@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.release.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.release.xcconfig"; sourceTree = "<group>"; };
 		08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic8BallGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A155A2F231E79C400653C70 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4A155A2F231E79C400653C70 /* APIReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReachability.swift; sourceTree = "<group>"; };
 		4A280589233CCF2400B4BA14 /* Colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Colors.json; sourceTree = "<group>"; };
 		4A28058B233CCF3F00B4BA14 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4A28058D233CCF7100B4BA14 /* GenerateResource.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = GenerateResource.sh; sourceTree = "<group>"; };
@@ -50,11 +50,11 @@
 		4A99E2A223057B5E0070BA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A99E2A523057B5E0070BA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A99E2A723057B5E0070BA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A99E2AD23057B6F0070BA91 /* RequestAnswersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAnswersAPI.swift; sourceTree = "<group>"; };
+		4A99E2AD23057B6F0070BA91 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		4A99E2AF23058AC40070BA91 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		4AB316F023069FB3003E3286 /* BallTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallTriangleView.swift; sourceTree = "<group>"; };
 		4AB316F22306A01F003E3286 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4AB316F42306A10F003E3286 /* BallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallModel.swift; sourceTree = "<group>"; };
+		4AB316F42306A10F003E3286 /* APIStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStruct.swift; sourceTree = "<group>"; };
 		4ABF38512343453400E2EA6A /* BallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewModel.swift; sourceTree = "<group>"; };
 		4ADB0BA6233CDAD40052D364 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7CBFEF5367AF08241B287568 /* Pods-Magic8BallGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.debug.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,13 +119,14 @@
 			isa = PBXGroup;
 			children = (
 				4A99E29B23057B5D0070BA91 /* AppDelegate.swift */,
-				4A99E29F23057B5D0070BA91 /* Main.storyboard */,
+				4ABF38542343605700E2EA6A /* Extension */,
 				4A99E2A423057B5E0070BA91 /* LaunchScreen.storyboard */,
-				4ABF38502343451700E2EA6A /* ViewModel */,
-				4AB316EF23069F03003E3286 /* ViewController */,
-				4AB316ED23069EBC003E3286 /* View */,
+				4A99E29F23057B5D0070BA91 /* Main.storyboard */,
 				4AB316EE23069EC8003E3286 /* Model */,
 				4A2128702305E31300EA83A6 /* Resources */,
+				4AB316ED23069EBC003E3286 /* View */,
+				4AB316EF23069F03003E3286 /* ViewController */,
+				4ABF38502343451700E2EA6A /* ViewModel */,
 			);
 			path = Magic8BallGame;
 			sourceTree = "<group>";
@@ -142,11 +143,8 @@
 		4AB316EE23069EC8003E3286 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4AB316F42306A10F003E3286 /* BallModel.swift */,
-				4A4F8EAF231E6A3C00F1051F /* Options.swift */,
-				4A155A2F231E79C400653C70 /* Reachability.swift */,
-				4A99E2AD23057B6F0070BA91 /* RequestAnswersAPI.swift */,
-				4AB316F22306A01F003E3286 /* Extensions.swift */,
+				4ABF38532343600400E2EA6A /* API */,
+				4ABF38572343610E00E2EA6A /* BallModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +164,32 @@
 				4ABF38512343453400E2EA6A /* BallViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4ABF38532343600400E2EA6A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4AB316F42306A10F003E3286 /* APIStruct.swift */,
+				4A155A2F231E79C400653C70 /* APIReachability.swift */,
+				4A99E2AD23057B6F0070BA91 /* APIModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4ABF38542343605700E2EA6A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AB316F22306A01F003E3286 /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4ABF38572343610E00E2EA6A /* BallModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A4F8EAF231E6A3C00F1051F /* Options.swift */,
+			);
+			path = BallModel;
 			sourceTree = "<group>";
 		};
 		C5E8ABA19C6B1804B6377C3B /* Pods */ = {
@@ -345,14 +369,14 @@
 				4AB316F32306A01F003E3286 /* Extensions.swift in Sources */,
 				4A4F8EB0231E6A3C00F1051F /* Options.swift in Sources */,
 				4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */,
-				4A99E2AE23057B6F0070BA91 /* RequestAnswersAPI.swift in Sources */,
+				4A99E2AE23057B6F0070BA91 /* APIModel.swift in Sources */,
 				4A99E29C23057B5D0070BA91 /* AppDelegate.swift in Sources */,
 				4ADB0BA7233CDAD40052D364 /* Colors.swift in Sources */,
 				4A99E2B023058AC40070BA91 /* BallView.swift in Sources */,
 				4A28059D233CD7D100B4BA14 /* L10n.swift in Sources */,
 				4ABF38522343453400E2EA6A /* BallViewModel.swift in Sources */,
-				4A155A30231E79C400653C70 /* Reachability.swift in Sources */,
-				4AB316F52306A10F003E3286 /* BallModel.swift in Sources */,
+				4A155A30231E79C400653C70 /* APIReachability.swift in Sources */,
+				4AB316F52306A10F003E3286 /* APIStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

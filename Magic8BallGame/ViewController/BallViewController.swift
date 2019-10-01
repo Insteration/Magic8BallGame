@@ -18,6 +18,7 @@ class BallViewController: UIViewController {
     private var gravity = UIGravityBehavior()
     private let ballView = BallView()
     private let options = Options()
+    private let ballViewModel = BallViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class BallViewController: UIViewController {
         createGyroDirection()
         createCustomNavigationController()
         startTimer()
-
+        self.ballViewModel.sendData()
     }
 
     override var canBecomeFirstResponder: Bool {
@@ -41,9 +42,8 @@ class BallViewController: UIViewController {
         if motion == .motionShake {
 
             if Reachability.isConnectedToNetwork() {
-                RequestAnswersAPI().getAnswerRequestFromApi { [weak self] magicBall in
-                    self?.ballView.myLabel.text = magicBall.magic.answer
-                }
+                self.ballViewModel.sendData()
+                self.ballView.myLabel.text = Options.answer
                 ballView.shake()
             } else {
                 if  Options.userStatus == -1 {
@@ -70,7 +70,6 @@ class BallViewController: UIViewController {
             motion.accelerometerUpdateInterval = 0.01
             motion.startAccelerometerUpdates(to: .main) { (data, error) in
                 guard let data = data, error == nil else { return }
-                print(data.acceleration.x, data.acceleration.y)
                 horizontalCoordinateLine = data.acceleration.x
             }
         }

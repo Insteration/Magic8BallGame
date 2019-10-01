@@ -23,7 +23,7 @@ internal enum L10n {
   internal static let letSDoIt = L10n.tr("Localizable", "Let's do it!")
   /// Not now
   internal static let notNow = L10n.tr("Localizable", "Not now")
-  /// String One
+  /// Shake for answer
   internal static let shakeForAnswer = L10n.tr("Localizable", "Shake for answer")
   /// Wait
   internal static let wait = L10n.tr("Localizable", "Wait")

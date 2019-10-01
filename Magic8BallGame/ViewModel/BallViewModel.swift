@@ -6,4 +6,15 @@
 //  Copyright © 2019 Johansson Group. All rights reserved.
 //
 
-import Foundation
+protocol BallViewModelProtocol {
+    func sendData()
+}
+
+class BallViewModel: BallViewModelProtocol {
+
+    private let model = APIModel()
+
+    func sendData() {
+         model.fetchData()
+    }
+}
