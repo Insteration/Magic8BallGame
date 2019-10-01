@@ -8,15 +8,11 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class BallOptionsViewController: UIViewController {
 
     @IBOutlet weak var optionsTableView: UITableView!
 
     private var options = Options()
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +22,7 @@ class OptionsViewController: UIViewController {
     }
 }
 
-extension OptionsViewController: UITableViewDataSource, UITableViewDelegate {
+extension BallOptionsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return L10n.chooseAnswer

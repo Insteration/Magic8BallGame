@@ -10,7 +10,7 @@ target 'Magic8BallGame' do
   use_frameworks!
 
   # Pods for Magic8BallGame
-pod 'Alamofire'
+pod 'Alamofire', '= 5.0.0-rc.2'
 pod 'SwiftLint'
 pod 'SwiftGen'
 end
