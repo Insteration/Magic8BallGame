@@ -11,58 +11,50 @@ import CoreMotion
 
 class BallViewController: UIViewController {
 
-    lazy var animator = UIDynamicAnimator()
+    private lazy var animator = UIDynamicAnimator()
     private var timer = Timer()
     private var gyroTimer = Timer()
     private var motion = CMMotionManager()
     private var gravity = UIGravityBehavior()
     private let ballView = BallView()
     private let options = Options()
-    private let ballViewModel = BallViewModel()
+
+    private lazy var ballViewModel: BallViewModel = {
+        let viewModel = BallViewModel(model: APIModel())
+        return viewModel
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.becomeFirstResponder()
         self.view.addSubview(ballView)
 
-        getConstrainsForBallView()
+        getCenterForBallView()
         getDynamicWithCollisionForView()
         createGyroDirection()
         createCustomNavigationController()
         startTimer()
-        self.ballViewModel.sendData()
+        
     }
 
-    override var canBecomeFirstResponder: Bool {
-        return true
+    private func useAnswer(answer: String) {
+        self.ballView.answerLabel.text = answer
     }
+
+    // MARK: - Motion check
 
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
 
-            if Reachability.isConnectedToNetwork() {
-                self.ballViewModel.sendData()
-                self.ballView.myLabel.text = Options.answer
-                ballView.shake()
-            } else {
-                if  Options.userStatus == -1 {
-                    self.ballView.myLabel.text = options.answers.randomElement()
-                    ballView.shake()
-                } else {
-                    self.ballView.myLabel.text = options.answers[Options.userStatus]
-                    ballView.shake()
-                }
+            ballViewModel.viewDidShaked { [weak self] (answer: String) in
+                self?.useAnswer(answer: answer)
+                self?.ballView.shake()
             }
             resetTimer()
         }
     }
 
-    @objc func clear() {
-        self.ballView.myLabel.text = L10n.shakeForAnswer
-    }
-
-    @objc func giro() {
+    @objc func cgeckDeviceMotion() {
 
         var horizontalCoordinateLine = 0.0
 
@@ -80,20 +72,28 @@ class BallViewController: UIViewController {
         }
     }
 
+    private func createGyroDirection() {
+        gyroTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(cgeckDeviceMotion), userInfo: nil, repeats: true)
+    }
+
+    // MARK: - Timer
+
     private func resetTimer() {
         timer.invalidate()
         startTimer()
     }
 
     private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(clear), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(getDefaultStatusForAnswerBar), userInfo: nil, repeats: true)
     }
 
-    private func createGyroDirection() {
-        gyroTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(giro), userInfo: nil, repeats: true)
+    @objc func getDefaultStatusForAnswerBar() {
+        self.ballView.answerLabel.text = L10n.shakeForAnswer
     }
 
-    private func getConstrainsForBallView() {
+    // MARK: - Setup Views etc
+
+    private func getCenterForBallView() {
         ballView.translatesAutoresizingMaskIntoConstraints = false
         ballView.center = view.center
     }
@@ -118,5 +118,13 @@ class BallViewController: UIViewController {
         imageView.image = image
 
         navigationItem.titleView = imageView
+
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Options", style: .done, target: self, action: #selector(self.action(sender:)))
+
+    }
+
+    @objc func action(sender: UIBarButtonItem) {
+        let optionsVC = BallOptionsViewController()
+        self.navigationController?.pushViewController(optionsVC, animated: true)
     }
 }

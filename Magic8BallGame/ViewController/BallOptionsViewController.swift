@@ -10,15 +10,24 @@ import UIKit
 
 class BallOptionsViewController: UIViewController {
 
-    @IBOutlet weak var optionsTableView: UITableView!
-
+    private var optionsTableView: UITableView!
     private var options = Options()
 
+    private func createTableView() {
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        optionsTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
+        optionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        optionsTableView.dataSource = self
+        optionsTableView.delegate = self
+        self.view.addSubview(optionsTableView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        optionsTableView.dataSource = self
-        optionsTableView.delegate = self
+        createTableView()
     }
 }
 

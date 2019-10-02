@@ -17,6 +17,4 @@ struct Options {
         L10n.letSDoIt
     ]
     static var userStatus = -1
-
-    static var answer = "Get status"
 }

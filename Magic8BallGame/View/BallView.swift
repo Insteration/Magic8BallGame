@@ -6,7 +6,7 @@ import UIKit
 
 class BallView: UIView {
 
-    var myLabel: UILabel = {
+    var answerLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 25, y: 65, width: 100, height: 30)
         label.textAlignment = .center
@@ -61,7 +61,7 @@ class BallView: UIView {
         triangle.backgroundColor = .clear
 
         self.backgroundView.addSubview(triangle)
-        triangle.addSubview(myLabel)
+        triangle.addSubview(answerLabel)
     }
 
     required init?(coder aDecoder: NSCoder) {

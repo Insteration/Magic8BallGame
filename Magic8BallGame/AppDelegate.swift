@@ -13,16 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var navigatioonController: UINavigationController?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "BallViewController") as? BallViewController
-        let navigationController = UINavigationController.init(rootViewController: mainViewController!)
-        self.window?.rootViewController = navigationController
-
-        self.window?.makeKeyAndVisible()
+        if let window = window {
+            let mainVC = BallViewController()
+            navigatioonController = UINavigationController(rootViewController: mainVC)
+            window.rootViewController = navigatioonController
+            window.makeKeyAndVisible()
+        }
         return true
     }
 }

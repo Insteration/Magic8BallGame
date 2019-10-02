@@ -8,23 +8,18 @@
 
 import Alamofire
 
-protocol RequestAnswerApiProtocol {
-    func fetchData()
-}
-
-class APIModel: RequestAnswerApiProtocol {
+class APIModel {
 
     private let api = "https://8ball.delegator.com/magic/JSON/"
     private let endpoint = "request"
 
-    func fetchData() {
-            responseData { doMagic in
-                Options.answer = doMagic.magic.answer
-                print(doMagic)
-            }
+    func fetchData(completion: @escaping (_ answer: String) -> Void) {
+        loadData { doMagic in
+            completion(doMagic.magic.answer)
+        }
     }
 
-    private func responseData(completed: @escaping (_ posts: MagicBall) -> Void) {
+    private func loadData(completed: @escaping (_ posts: MagicBall) -> Void) {
 
         guard let apiUrl = URL(string: api + endpoint) else { return }
 
@@ -43,7 +38,6 @@ class APIModel: RequestAnswerApiProtocol {
             case .failure(let error):
                 print(error)
             }
-
         }
     }
 }
