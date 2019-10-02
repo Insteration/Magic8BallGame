@@ -23,7 +23,7 @@ class BallOptionsViewController: UIViewController {
         optionsTableView.delegate = self
         self.view.addSubview(optionsTableView)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

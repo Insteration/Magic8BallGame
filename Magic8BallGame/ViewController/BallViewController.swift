@@ -34,7 +34,6 @@ class BallViewController: UIViewController {
         createGyroDirection()
         createCustomNavigationController()
         startTimer()
-        
     }
 
     private func useAnswer(answer: String) {
@@ -118,9 +117,10 @@ class BallViewController: UIViewController {
         imageView.image = image
 
         navigationItem.titleView = imageView
-
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Options", style: .done, target: self, action: #selector(self.action(sender:)))
-
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: L10n.wait,
+                                                                      style: .done,
+                                                                      target: self,
+                                                                      action: #selector(self.action(sender:)))
     }
 
     @objc func action(sender: UIBarButtonItem) {
