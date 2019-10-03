@@ -11,6 +11,6 @@ target 'Magic8BallGame' do
 
   # Pods for Magic8BallGame
 pod 'Alamofire', '= 5.0.0-rc.2'
-pod 'SwiftLint'
-pod 'SwiftGen'
+pod 'SwiftLint', '= 0.35.0'
+pod 'SwiftGen', '= 6.1.0'
 end

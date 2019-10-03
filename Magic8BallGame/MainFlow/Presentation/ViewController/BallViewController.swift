@@ -16,45 +16,51 @@ class BallViewController: UIViewController {
     private var gyroTimer = Timer()
     private var motion = CMMotionManager()
     private var gravity = UIGravityBehavior()
-    private let ballView = BallView()
-    private let options = Options()
+    private let ballView = BallBlackView()
 
-    private lazy var ballViewModel: BallViewModel = {
-        let viewModel = BallViewModel(model: APIModel())
-        return viewModel
-    }()
+    private let ballViewModel: BallViewModel!
+
+    init(ballViewModel: BallViewModel) {
+        self.ballViewModel = ballViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.addSubview(ballView)
 
-        getCenterForBallView()
-        getDynamicWithCollisionForView()
-        createGyroDirection()
-        createCustomNavigationController()
-        startTimer()
+        setCenterForBlackBallViewInMainView()
+        setDynamicWithCollisionForView()
+        createGyroscopeTimer()
+        setupCustomNavigationController()
+        startTheTimer()
+
+        ballViewModel.stateHandler = { [weak self] response in
+            self?.useAnswer(answer: response.text)
+            self?.ballView.shake()
+            self?.resetTimer()
+        }
     }
+
+    // MARK: - Get Answer from Ball View Model
 
     private func useAnswer(answer: String) {
         self.ballView.answerLabel.text = answer
     }
 
-    // MARK: - Motion check
+    // MARK: - Motion and Gyroscope
 
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-
-            ballViewModel.viewDidShaked { [weak self] (answer: String) in
-                self?.useAnswer(answer: answer)
-                self?.ballView.shake()
-            }
-            resetTimer()
+            ballViewModel.viewDidShaked()
         }
     }
 
-    @objc func cgeckDeviceMotion() {
-
+    @objc private func cgeckDeviceMotion() {
         var horizontalCoordinateLine = 0.0
 
         if motion.isAccelerometerAvailable {
@@ -71,7 +77,7 @@ class BallViewController: UIViewController {
         }
     }
 
-    private func createGyroDirection() {
+    private func createGyroscopeTimer() {
         gyroTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(cgeckDeviceMotion), userInfo: nil, repeats: true)
     }
 
@@ -79,32 +85,32 @@ class BallViewController: UIViewController {
 
     private func resetTimer() {
         timer.invalidate()
-        startTimer()
+        startTheTimer()
     }
 
-    private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(getDefaultStatusForAnswerBar), userInfo: nil, repeats: true)
+    private func startTheTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(setDefaultStatusForAnswerBar), userInfo: nil, repeats: true)
     }
 
-    @objc func getDefaultStatusForAnswerBar() {
+    @objc private func setDefaultStatusForAnswerBar() {
         self.ballView.answerLabel.text = L10n.shakeForAnswer
     }
 
-    // MARK: - Setup Views etc
+    // MARK: - Setup Views
 
-    private func getCenterForBallView() {
+    private func setCenterForBlackBallViewInMainView() {
         ballView.translatesAutoresizingMaskIntoConstraints = false
         ballView.center = view.center
     }
 
-    private func getDynamicWithCollisionForView() {
+    private func setDynamicWithCollisionForView() {
         animator = UIDynamicAnimator(referenceView: self.view)
         let collisionBehavior = UICollisionBehavior(items: [ballView])
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collisionBehavior)
     }
 
-    private func createCustomNavigationController() {
+    private func setupCustomNavigationController() {
         let nav = self.navigationController?.navigationBar
 
         nav?.barStyle = UIBarStyle.black
@@ -123,8 +129,9 @@ class BallViewController: UIViewController {
                                                                       action: #selector(self.action(sender:)))
     }
 
-    @objc func action(sender: UIBarButtonItem) {
-        let optionsVC = BallOptionsViewController()
+    @objc private func action(sender: UIBarButtonItem) {
+        let optionsVC = BallOptionsViewController(ballOptionsViewModel: BallOptionsViewModel(model: BallOptionsModel(
+            hardAnswersStorage: DataAnswer())))
         self.navigationController?.pushViewController(optionsVC, animated: true)
     }
 }

@@ -11,7 +11,17 @@ import UIKit
 class BallOptionsViewController: UIViewController {
 
     private var optionsTableView: UITableView!
-    private var options = Options()
+    private var ballOptionsViewModel: BallOptionsViewModel!
+    private var hardAnswers = [String]()
+
+    init(ballOptionsViewModel: BallOptionsViewModel) {
+        self.ballOptionsViewModel = ballOptionsViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     private func createTableView() {
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
@@ -28,6 +38,12 @@ class BallOptionsViewController: UIViewController {
         super.viewDidLoad()
 
         createTableView()
+
+        ballOptionsViewModel.getNumberOfHardAnswers { (answers) in
+            for get in answers {
+                self.hardAnswers.append(get)
+            }
+        }
     }
 }
 
@@ -38,22 +54,12 @@ extension BallOptionsViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.answers.count
+        return hardAnswers.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = optionsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = options.answers[indexPath.row]
+        cell.textLabel?.text = hardAnswers[indexPath.row]
         return cell
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        Options.userStatus = indexPath.row
-    }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
-    }
-
 }

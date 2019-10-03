@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
     var navigatioonController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
         if let window = window {
-            let mainVC = BallViewController()
+            let viewModel = BallViewModel(model: BallModel(api: APIModel(), answersStorage: DataAnswer()))
+            let mainVC = BallViewController(ballViewModel: viewModel)
             navigatioonController = UINavigationController(rootViewController: mainVC)
             window.rootViewController = navigatioonController
             window.makeKeyAndVisible()
