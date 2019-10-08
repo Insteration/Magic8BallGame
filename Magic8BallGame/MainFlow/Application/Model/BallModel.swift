@@ -7,6 +7,7 @@
 //
 
 class BallModel {
+
     private let api: APIModelProtocol
     private let answersStorage: DataAnswerProtocol
 
