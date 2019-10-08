@@ -40,8 +40,8 @@ class BallOptionsViewController: UIViewController {
         createTableView()
 
         ballOptionsViewModel.getNumberOfHardAnswers { (answers) in
-            for get in answers {
-                self.hardAnswers.append(get)
+            for answer in answers {
+                self.hardAnswers.append(answer)
             }
         }
     }

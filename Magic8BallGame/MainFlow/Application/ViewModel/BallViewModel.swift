@@ -17,7 +17,7 @@ class BallViewModel {
 
     func viewDidShaked() {
         model.fetchData { answer in
-            self.stateHandler!(answer.toPresentableAnswer())
+            self.stateHandler?(answer.toPresentableAnswer())
         }
     }
 }

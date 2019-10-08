@@ -7,22 +7,22 @@
 //
 
 class BallModel {
-    private let api: APIModel
-    private let answersStorage: DataAnswer
+    private let api: APIModelProtocol
+    private let answersStorage: DataAnswerProtocol
 
-    init(api: APIModel, answersStorage: DataAnswer) {
+    init(api: APIModelProtocol, answersStorage: DataAnswerProtocol) {
         self.api = api
         self.answersStorage = answersStorage
     }
 
     private func getHardAnswers() -> String {
-        return answersStorage.hard.randomElement() ?? "Error"
+        return  answersStorage.getHardAnswer()
     }
 
     func fetchData(completion: @escaping (_ answer: ModelAnswer) -> Void) {
         if Reachability.isConnectedToNetwork() {
             api.fetchData { response in
-                completion(response.toAnswer())
+                completion(response.toModelAnswer())
             }
         } else {
             completion(ModelAnswer(text: getHardAnswers()))

@@ -7,7 +7,8 @@
 //
 
 protocol DataAnswerProtocol {
-    func toAnswer() -> ModelAnswer
+    func toModelAnswer() -> ModelAnswer
+    func getHardAnswer() -> String
 }
 
 struct DataAnswer: DataAnswerProtocol {
@@ -24,7 +25,13 @@ struct DataAnswer: DataAnswerProtocol {
 }
 
 extension DataAnswer {
-    func toAnswer() -> ModelAnswer {
+    func toModelAnswer() -> ModelAnswer {
         return ModelAnswer(text: text)
+    }
+}
+
+extension DataAnswer {
+    func getHardAnswer() -> String {
+        return hard.randomElement() ?? "Error"
     }
 }
