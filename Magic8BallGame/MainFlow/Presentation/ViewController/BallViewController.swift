@@ -20,6 +20,9 @@ class BallViewController: UIViewController {
 
     private let ballViewModel: BallViewModel!
 
+    var startDate: Date?
+    var countShaker = [TimeInterval]()
+    
     init(ballViewModel: BallViewModel) {
         self.ballViewModel = ballViewModel
         super.init(nibName: nil, bundle: nil)

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/artemkarma/Desktop/Yalantis/Magic8BallGame/GCD.playground">
+   </FileRef>
+   <FileRef
       location = "group:Magic8BallGame.xcodeproj">
    </FileRef>
    <FileRef

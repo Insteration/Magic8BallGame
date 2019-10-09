@@ -35,7 +35,7 @@ class BallBlackView: UIView {
         view.layer.shadowRadius = 2.0
         return view
     }()
-
+    
     fileprivate func setupBallView() {
         self.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         self.layer.borderWidth = 3.0
@@ -48,22 +48,22 @@ class BallBlackView: UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = .black
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         setupBallView()
-
+        
         self.addSubview(backgroundView)
         backgroundView.center = self.center
-
+        
         let triangle = BallTriangleView(frame: CGRect(x: 0, y: 0, width: 150, height: 120))
         triangle.backgroundColor = .clear
-
+        
         self.backgroundView.addSubview(triangle)
         triangle.addSubview(answerLabel)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
