@@ -4,10 +4,10 @@
 
 import UIKit
 
-class AnswerView: UIView {
-    
+class AnswerMainView: UIView {
+
     // MARK: - UIView's objects
-    
+
     var answerLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -21,7 +21,7 @@ class AnswerView: UIView {
         label.backgroundColor = .clear
         return label
     }()
-    
+
     var viewForTriangleView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.00, green: 0.00, blue: 0.0, alpha: 0.8)
@@ -45,7 +45,7 @@ class AnswerView: UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = .black
     }
-    
+
     private func setupConstraintsForBallView() {
         viewForTriangleView.translatesAutoresizingMaskIntoConstraints = false
         viewForTriangleView.widthAnchor.constraint(equalToConstant: 150).isActive = true
@@ -53,34 +53,34 @@ class AnswerView: UIView {
         viewForTriangleView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         viewForTriangleView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
-    
-    private func setupTriangleView() {
-        let triangle = BallTriangleView()
-        self.viewForTriangleView.addSubview(triangle)
-        triangle.backgroundColor = .clear
-        triangle.translatesAutoresizingMaskIntoConstraints = false
-        triangle.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        triangle.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        triangle.topAnchor.constraint(equalTo: topAnchor, constant: 75).isActive = true
-        triangle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        triangle.addSubview(answerLabel)
-        
+
+    private func setupLabelView() {
+        let labelView = LabelAnswerView()
+        self.viewForTriangleView.addSubview(labelView)
+        labelView.backgroundColor = .clear
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        labelView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        labelView.topAnchor.constraint(equalTo: topAnchor, constant: 75).isActive = true
+        labelView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        labelView.addSubview(answerLabel)
+
         answerLabel.translatesAutoresizingMaskIntoConstraints = false
         answerLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         answerLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupBallView()
-        
+
         self.addSubview(viewForTriangleView)
         setupConstraintsForBallView()
-        
-        setupTriangleView()
+
+        setupLabelView()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

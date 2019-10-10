@@ -36,4 +36,4 @@ private class Concurrency {
 
 let concurrency = Concurrency()
 //concurrency.getDeadlockWithTwoQueues()
-//concurrency.getCancelToDispatchWorkItem()
+concurrency.getCancelToDispatchWorkItem()
