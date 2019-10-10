@@ -1,6 +1,6 @@
 import Foundation
 
-class Concurrency {
+private class Concurrency {
 
     let mainQueue = DispatchQueue.main
     let backgroundQueue = DispatchQueue(label: "com.app.backgroundQueue", qos: .background)

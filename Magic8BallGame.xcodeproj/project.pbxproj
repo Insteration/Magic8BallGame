@@ -24,8 +24,8 @@
 		4A99E29E23057B5D0070BA91 /* BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E29D23057B5D0070BA91 /* BallViewController.swift */; };
 		4A99E2A323057B5E0070BA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A99E2A223057B5E0070BA91 /* Assets.xcassets */; };
 		4A99E2AE23057B6F0070BA91 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AD23057B6F0070BA91 /* APIModel.swift */; };
-		4A99E2B023058AC40070BA91 /* BallBlackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AF23058AC40070BA91 /* BallBlackView.swift */; };
-		4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F023069FB3003E3286 /* BallTriangleView.swift */; };
+		4A99E2B023058AC40070BA91 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A99E2AF23058AC40070BA91 /* AnswerView.swift */; };
+		4AB316F123069FB3003E3286 /* LabelAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F023069FB3003E3286 /* LabelAnswerView.swift */; };
 		4AB316F32306A01F003E3286 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F22306A01F003E3286 /* Extensions.swift */; };
 		4AB316F52306A10F003E3286 /* APIEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB316F42306A10F003E3286 /* APIEntities.swift */; };
 		4ABF38522343453400E2EA6A /* BallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF38512343453400E2EA6A /* BallViewModel.swift */; };
@@ -57,8 +57,8 @@
 		4A99E2A223057B5E0070BA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A99E2A723057B5E0070BA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A99E2AD23057B6F0070BA91 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
-		4A99E2AF23058AC40070BA91 /* BallBlackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallBlackView.swift; sourceTree = "<group>"; };
-		4AB316F023069FB3003E3286 /* BallTriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallTriangleView.swift; sourceTree = "<group>"; };
+		4A99E2AF23058AC40070BA91 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		4AB316F023069FB3003E3286 /* LabelAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAnswerView.swift; sourceTree = "<group>"; };
 		4AB316F22306A01F003E3286 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4AB316F42306A10F003E3286 /* APIEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEntities.swift; sourceTree = "<group>"; };
 		4ABF38512343453400E2EA6A /* BallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallViewModel.swift; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 		4AB316ED23069EBC003E3286 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A99E2AF23058AC40070BA91 /* BallBlackView.swift */,
-				4AB316F023069FB3003E3286 /* BallTriangleView.swift */,
+				4A99E2AF23058AC40070BA91 /* AnswerView.swift */,
+				4AB316F023069FB3003E3286 /* LabelAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,12 +463,12 @@
 				4A28059A233CD5A600B4BA14 /* Assets.swift in Sources */,
 				4AB316F32306A01F003E3286 /* Extensions.swift in Sources */,
 				3C89849123454AE300341380 /* BallOptionsModel.swift in Sources */,
-				4AB316F123069FB3003E3286 /* BallTriangleView.swift in Sources */,
+				4AB316F123069FB3003E3286 /* LabelAnswerView.swift in Sources */,
 				3CF77AE22345229B002F59F8 /* BallModel.swift in Sources */,
 				4A99E2AE23057B6F0070BA91 /* APIModel.swift in Sources */,
 				4A99E29C23057B5D0070BA91 /* AppDelegate.swift in Sources */,
 				4ADB0BA7233CDAD40052D364 /* Colors.swift in Sources */,
-				4A99E2B023058AC40070BA91 /* BallBlackView.swift in Sources */,
+				4A99E2B023058AC40070BA91 /* AnswerView.swift in Sources */,
 				3CF77AED23453428002F59F8 /* PresentableAnswer.swift in Sources */,
 				3CF77AE02345150C002F59F8 /* BallOptionsViewModel.swift in Sources */,
 				3CF77AEF23453667002F59F8 /* DataAnswer.swift in Sources */,
