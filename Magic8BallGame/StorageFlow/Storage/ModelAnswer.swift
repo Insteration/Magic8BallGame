@@ -25,7 +25,7 @@ extension ModelAnswer {
         return PresentableAnswer(text: text.uppercased())
     }
 
-    func saveModelAnswerToCoreDataContainer() {
+    private func saveModelAnswerToCoreDataContainer() {
         let coreData = CoreDataStack(modelName: "zxczxc")
         let moc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         moc.parent = coreData.context
