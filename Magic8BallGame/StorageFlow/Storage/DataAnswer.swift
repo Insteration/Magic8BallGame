@@ -12,6 +12,7 @@ protocol DataAnswerProtocol {
 }
 
 struct DataAnswer: DataAnswerProtocol {
+
     var text = ""
 
     let hard = [

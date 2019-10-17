@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C89849123454AE300341380 /* BallOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C89849023454AE300341380 /* BallOptionsModel.swift */; };
+		3C92CFA02357332B00831C28 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C92CF9F2357332B00831C28 /* CoreDataStack.swift */; };
+		3C92CFA22357333700831C28 /* zxczxc.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3C92CFA12357333700831C28 /* zxczxc.xcdatamodel */; };
 		3CF77AE02345150C002F59F8 /* BallOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF77ADF2345150C002F59F8 /* BallOptionsViewModel.swift */; };
 		3CF77AE22345229B002F59F8 /* BallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF77AE12345229B002F59F8 /* BallModel.swift */; };
 		3CF77AEB234533E6002F59F8 /* ModelAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF77AEA234533E6002F59F8 /* ModelAnswer.swift */; };
@@ -37,6 +39,8 @@
 		0631085B3D42C87A7B4F0F0B /* Pods-Magic8BallGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic8BallGame.release.xcconfig"; path = "Target Support Files/Pods-Magic8BallGame/Pods-Magic8BallGame.release.xcconfig"; sourceTree = "<group>"; };
 		08B3F886906D84DAC61905AF /* Pods_Magic8BallGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic8BallGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C89849023454AE300341380 /* BallOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallOptionsModel.swift; sourceTree = "<group>"; };
+		3C92CF9F2357332B00831C28 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		3C92CFA12357333700831C28 /* zxczxc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = zxczxc.xcdatamodel; sourceTree = "<group>"; };
 		3CF77ADF2345150C002F59F8 /* BallOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallOptionsViewModel.swift; sourceTree = "<group>"; };
 		3CF77AE12345229B002F59F8 /* BallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallModel.swift; sourceTree = "<group>"; };
 		3CF77AEA234533E6002F59F8 /* ModelAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAnswer.swift; sourceTree = "<group>"; };
@@ -89,9 +93,27 @@
 		3C898492234550D200341380 /* StorageFlow */ = {
 			isa = PBXGroup;
 			children = (
+				3C92CF9E2357332100831C28 /* CoreData */,
 				3CF77AE92345339B002F59F8 /* Storage */,
 			);
 			path = StorageFlow;
+			sourceTree = "<group>";
+		};
+		3C92CF9E2357332100831C28 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3C92CF9F2357332B00831C28 /* CoreDataStack.swift */,
+				3C92CFA12357333700831C28 /* zxczxc.xcdatamodel */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3CB43C20235793C200F346EF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4A99E29B23057B5D0070BA91 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		3CF77ADA2345123B002F59F8 /* MainFlow */ = {
@@ -228,7 +250,7 @@
 		4A99E29A23057B5D0070BA91 /* Magic8BallGame */ = {
 			isa = PBXGroup;
 			children = (
-				4A99E29B23057B5D0070BA91 /* AppDelegate.swift */,
+				3CB43C20235793C200F346EF /* AppDelegate */,
 				3CF77ADA2345123B002F59F8 /* MainFlow */,
 				3CF77ADB2345131C002F59F8 /* OptionsFlow */,
 				3C898492234550D200341380 /* StorageFlow */,
@@ -472,7 +494,9 @@
 				3CF77AED23453428002F59F8 /* PresentableAnswer.swift in Sources */,
 				3CF77AE02345150C002F59F8 /* BallOptionsViewModel.swift in Sources */,
 				3CF77AEF23453667002F59F8 /* DataAnswer.swift in Sources */,
+				3C92CFA22357333700831C28 /* zxczxc.xcdatamodel in Sources */,
 				4A28059D233CD7D100B4BA14 /* L10n.swift in Sources */,
+				3C92CFA02357332B00831C28 /* CoreDataStack.swift in Sources */,
 				4ABF38522343453400E2EA6A /* BallViewModel.swift in Sources */,
 				4A155A30231E79C400653C70 /* APIReachability.swift in Sources */,
 				3CF77AEB234533E6002F59F8 /* ModelAnswer.swift in Sources */,
