@@ -38,7 +38,7 @@ class BallStorageViewController: UIViewController {
         createRefreshControl()
         userStorageAnswers()
     }
-    
+
     // MARK: - Load answers
 
     private func userStorageAnswers() {
@@ -87,7 +87,9 @@ extension BallStorageViewController: UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = answersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = answersList[indexPath.row].text
+        let row = indexPath.row
+        let count = answersList.count
+        cell.textLabel?.text = answersList[count - row - 1].text
         if indexPath.row % 2 == 0 {
             cell.contentView.backgroundColor = .lightGray
         }

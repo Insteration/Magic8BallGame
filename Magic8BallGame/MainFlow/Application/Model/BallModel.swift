@@ -30,7 +30,7 @@ class BallModel {
             do {
                 try self.coreData.save(answer: modelAnswer)
             } catch {
-                print(error)
+                fatalError()
             }
         }
     }
