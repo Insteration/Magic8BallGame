@@ -10,6 +10,7 @@ class BallViewModel {
 
     private let model: BallModel
     var stateHandler: ((PresentableAnswer) -> Void)?
+    var storageHandler: (([ModelAnswer]) -> Void)?
 
     init(model: BallModel) {
         self.model = model
@@ -19,5 +20,10 @@ class BallViewModel {
         model.fetchData { answer in
             self.stateHandler?(answer.toPresentableAnswer())
         }
+    }
+
+    func fetchData() -> [ModelAnswer] {
+        let fetchData = model.fetchDataFromStorage
+        return fetchData()
     }
 }

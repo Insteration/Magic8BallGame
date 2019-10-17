@@ -19,9 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
         if let window = window {
-            let viewModel = BallViewModel(model: BallModel(api: APIModel(), answersStorage: DataAnswer()))
-            let mainVC = BallViewController(ballViewModel: viewModel)
-            navigatioonController = UINavigationController(rootViewController: mainVC)
+            let viewModel = BallViewModel(model: BallModel(api: APIModel(),
+                                                           answersStorage: DataAnswer(),
+                                                           coreData: CoreDataService(modelName: "zxczxc"))
+            )
+
+            navigatioonController = UINavigationController(rootViewController: BallTabBarController(ballViewModel: viewModel))
             window.rootViewController = navigatioonController
             window.makeKeyAndVisible()
         }

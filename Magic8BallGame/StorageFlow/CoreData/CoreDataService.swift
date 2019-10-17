@@ -1,12 +1,18 @@
 import Foundation
 import CoreData
 
+protocol CoreDataServiceProtocol {
+    var context: NSManagedObjectContext { get set }
+    func save(answer: ModelAnswer) throws
+    func answers() throws -> [ModelAnswer]?
+}
+
 enum RepositoryError: Error {
     case general
     case unexpectedData
 }
 
-class CoreDataStack {
+class CoreDataService: CoreDataServiceProtocol {
 
     private let modelName: String
 
@@ -22,9 +28,8 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: self.modelName)
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
-                print("Unresolved error \(error), \(error.userInfo)")
+                print(fatalError)
             }
-            print(storeDescription)
         }
         return container
     }()

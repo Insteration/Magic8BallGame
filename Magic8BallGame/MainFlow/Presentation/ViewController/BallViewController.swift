@@ -34,7 +34,6 @@ class BallViewController: UIViewController {
         setupConstraintsForAnswerView()
 
         createGyroscopeTimer()
-        setupCustomNavigationController()
         startTheTimer()
 
         ballViewModel.stateHandler = { [weak self] response in
@@ -58,7 +57,8 @@ class BallViewController: UIViewController {
         }
     }
 
-    @objc private func cgeckDeviceMotion() {
+    @objc
+    private func cgeckDeviceMotion() {
         var horizontalCoordinateLine = 0.0
 
         if motion.isAccelerometerAvailable {
@@ -90,7 +90,8 @@ class BallViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 9.0, target: self, selector: #selector(setDefaultStatusForAnswerBar), userInfo: nil, repeats: true)
     }
 
-    @objc private func setDefaultStatusForAnswerBar() {
+    @objc
+    private func setDefaultStatusForAnswerBar() {
         self.answerView.answerLabel.text = L10n.shakeForAnswer
     }
 
@@ -98,37 +99,11 @@ class BallViewController: UIViewController {
 
     private func setupConstraintsForAnswerView() {
         answerView.translatesAutoresizingMaskIntoConstraints = false
-
         answerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         answerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         answerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         answerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
         answerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         answerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-
-    private func setupCustomNavigationController() {
-        let nav = self.navigationController?.navigationBar
-
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.white
-
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        imageView.contentMode = .scaleAspectFit
-
-        let image = Asset._8.image
-        imageView.image = image
-
-        navigationItem.titleView = imageView
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: L10n.wait,
-                                                                      style: .done,
-                                                                      target: self,
-                                                                      action: #selector(self.action(sender:)))
-    }
-
-    @objc private func action(sender: UIBarButtonItem) {
-        let optionsVC = BallOptionsViewController(ballOptionsViewModel: BallOptionsViewModel(model: BallOptionsModel(
-            hardAnswersStorage: DataAnswer())))
-        self.navigationController?.pushViewController(optionsVC, animated: true)
     }
 }

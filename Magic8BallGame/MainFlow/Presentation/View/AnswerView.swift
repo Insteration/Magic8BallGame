@@ -36,14 +36,14 @@ class AnswerMainView: UIView {
     }()
 
     private func setupBallView() {
-        self.layer.borderWidth = 3.0
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 3, height: 3)
-        self.layer.shadowOpacity = 0.7
-        self.layer.shadowRadius = 4.0
-        self.layer.masksToBounds = true
-        self.backgroundColor = .black
+        layer.borderWidth = 3.0
+        layer.borderColor = UIColor.white.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 3, height: 3)
+        layer.shadowOpacity = 0.7
+        layer.shadowRadius = 4.0
+        layer.masksToBounds = true
+        backgroundColor = .black
     }
 
     private func setupConstraintsForBallView() {
@@ -55,7 +55,7 @@ class AnswerMainView: UIView {
     }
 
     private func setupLabelView() {
-        let labelView = LabelAnswerView()
+        let labelView = UIView()
         self.viewForTriangleView.addSubview(labelView)
         labelView.backgroundColor = .clear
         labelView.translatesAutoresizingMaskIntoConstraints = false

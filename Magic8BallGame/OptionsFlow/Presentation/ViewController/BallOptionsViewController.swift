@@ -13,8 +13,6 @@ class BallOptionsViewController: UIViewController {
     private var optionsTableView: UITableView!
     private var ballOptionsViewModel: BallOptionsViewModel!
     private var hardAnswers = [String]()
-    var answer: PresentableAnswer!
-    private var answers: [ModelAnswer]?
 
     init(ballOptionsViewModel: BallOptionsViewModel) {
         self.ballOptionsViewModel = ballOptionsViewModel
@@ -41,11 +39,6 @@ class BallOptionsViewController: UIViewController {
         optionsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchData()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,35 +51,21 @@ class BallOptionsViewController: UIViewController {
             }
         }
     }
-
-    private func fetchData() {
-        let coreData = CoreDataStack(modelName: "zxczxc")
-        do {
-            answers = try coreData.answers()
-        } catch {
-            print(error)
-        }
-    }
 }
 
 extension BallOptionsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return L10n.keepOn
+        return L10n.chooseAnswer
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return answers?.count ?? 1
+        return hardAnswers.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = optionsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        var answer = [String]()
-        answers?.forEach({ (modelAnswer) in
-            answer.append(modelAnswer.text)
-        })
-        cell.textLabel?.text = answer[indexPath.row]
+        cell.textLabel?.text = hardAnswers[indexPath.row]
         return cell
     }
 }
