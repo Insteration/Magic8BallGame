@@ -1,3 +1,11 @@
+//
+//  CoreDataStack.swift
+//  Magic8BallGame
+//
+//  Created by Artem Karma on 13/2/19.
+//  Copyright © 2019 Johansson Group. All rights reserved.
+//
+
 import Foundation
 import CoreData
 
